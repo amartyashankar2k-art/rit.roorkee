@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- no-referrer policy ensures images from third-party academic repositories load cleanly -->
+  <meta name="referrer" content="no-referrer">
+  <title>RIT Roorkee - Student Help-Desk Portal | NAAC A++ Ranked #1 in Uttarakhand</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://ritroorkee.com/wp-content/uploads/2024/01/RIT-NAAC-LOGO-1.pdf-1.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Campus Announcements">
+    <div class="container announcement-content">
+      <div class="announcement-left">
+        <span class="announcement-tag"><i class="fa-solid fa-bullhorn"></i> Live Update</span>
+        <span>Admissions Open 2026-27 | NAAC A++ Accredited Institute | Ranked #1 in Uttarakhand Since 2005</span>
+      </div>
+      <div class="announcement-right">
+        <a href="tel:+919927099224"><i class="fa-solid fa-phone"></i> +91-99270 99224</a>
+        <a href="mailto:helpdesk@ritroorkee.com"><i class="fa-solid fa-envelope"></i> helpdesk@ritroorkee.com</a>
+        <a href="https://ritroorkee.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> ritroorkee.com</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- RIT Logo -->
+      <a href="#home" class="brand-wrapper" title="Roorkee Institute of Technology">
+        <img 
+          src="https://ritroorkee.com/wp-content/uploads/2024/01/RIT-NAAC-LOGO-1.pdf-1.png" 
+          alt="RIT Roorkee NAAC A++ Logo" 
+          class="logo-image"
+          onerror="this.onerror=null; this.src='https://placehold.co/240x60/072559/ffffff?text=RIT+Roorkee+NAAC+A%2B%2B';"
+        >
+        <div class="brand-text">
+          <span class="brand-name">RIT Roorkee</span>
+          <span class="brand-sub">Student Help-Desk Hub</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#academics" class="nav-link">Academics</a></li>
+          <li><a href="#hostel" class="nav-link">Hostel</a></li>
+          <li><a href="#library" class="nav-link">Library</a></li>
+          <li><a href="#placements" class="nav-link">Placements</a></li>
+          <li><a href="#leadership" class="nav-link">Leadership</a></li>
+          <li><a href="#faqs" class="nav-link">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA Action Buttons -->
+      <div class="nav-actions">
+        <a href="https://ritroorkee.com" target="_blank" rel="noopener noreferrer" class="btn-portal" title="Official RIT Website">
+          <i class="fa-solid fa-globe"></i>
+          <span>Official Web</span>
+        </a>
+        <a href="#helpdesk" class="btn-ticket" title="Raise a Student Query">
+          <i class="fa-solid fa-headset"></i>
+          <span>Help Desk</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" id="mobileToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-backdrop-circle hero-circle-1"></div>
+      <div class="hero-backdrop-circle hero-circle-2"></div>
+
+      <div class="container hero-inner">
+        <div class="badge-naac">
+          <i class="fa-solid fa-award"></i>
+          <span>NAAC A++ Accredited • Ranked #1 in Uttarakhand</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Your Ultimate <span class="gradient-text">RIT Student Hub</span>
+        </h1>
+
+        <p class="hero-description">
+          Welcome to the centralized student portal of Roorkee Institute of Technology. Access real-time academic timetables, hostel mess menus, placement prep resources, library books, and leadership advisories in one unified place.
+        </p>
+
+        <!-- Live Instant Search Bar -->
+        <div class="search-container">
+          <div class="search-bar-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input 
+              type="text" 
+              id="heroSearchInput" 
+              class="search-input" 
+              placeholder="What do you need help with today? (e.g., Hostel fees, Syllabus, Placement stats)"
+              autocomplete="off"
+            >
+            <button class="search-btn" id="heroSearchBtn" type="button">
+              <span>Find Help</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Dynamic Suggestions Dropdown -->
+          <div class="search-suggestions-dropdown" id="searchSuggestionsBox"></div>
+
+          <!-- Quick Access Trending Tags -->
+          <div class="hero-quick-tags">
+            <span class="quick-label">Trending:</span>
+            <button class="tag-pill" onclick="searchTag('Hostel fees')">Hostel Fees</button>
+            <button class="tag-pill" onclick="searchTag('Syllabus')">Syllabus 2026</button>
+            <button class="tag-pill" onclick="searchTag('Mess Menu')">Mess Menu</button>
+            <button class="tag-pill" onclick="searchTag('Placement stats')">Placement Stats</button>
+            <button class="tag-pill" onclick="searchTag('Warden')">Warden Contact</button>
+            <button class="tag-pill" onclick="searchTag('Library')">Library OPAC</button>
+          </div>
+        </div>
+
+        <!-- Key Institution Metrics -->
+        <div class="hero-stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">A++</div>
+            <div class="stat-label">NAAC Accreditation</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number highlight-red">₹56 LPA</div>
+            <div class="stat-label">Highest Package</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">92%+</div>
+            <div class="stat-label">Placement Track Record</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">20+ Yrs</div>
+            <div class="stat-label">Excellence Since 2005</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         QUICK ACCESS CARDS SECTION
+         ========================================================================== -->
+    <section class="quick-access-section" id="quickAccess">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-cubes"></i> Core Services</span>
+          <h2 class="section-title">Everything You Need, Right At Your Fingertips</h2>
+          <p class="section-subtitle">
+            Explore interactive modules tailored for RIT scholars. View class schedules, track hostel amenities, explore the library catalog, and prepare for top recruitment drives.
+          </p>
+
+          <!-- Category Filter Tabs -->
+          <div class="category-tabs">
+            <button class="tab-btn active" data-filter="all">All Services</button>
+            <button class="tab-btn" data-filter="academics">Academics</button>
+            <button class="tab-btn" data-filter="hostel">Hostel Life</button>
+            <button class="tab-btn" data-filter="library">Library & E-Resources</button>
+            <button class="tab-btn" data-filter="placements">Placements</button>
+          </div>
+        </div>
+
+        <!-- 4 Core Service Cards (Grid Layout) -->
+        <div class="cards-grid">
+          
+          <!-- Card 1: Academics -->
+          <div class="service-card" id="academics" data-category="academics">
+            <div class="card-header">
+              <div class="card-icon-box icon-academics">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <span class="card-badge">Academic Portal</span>
+            </div>
+            <h3 class="card-title">Academics</h3>
+            <p class="card-desc">
+              Stay ahead with up-to-date semester curriculums, faculty notifications, weekly department schedules, and university exam circulars.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span><strong>Timetables:</strong> B.Tech (CSE, AI/ML, ME, CE, EE), MBA, MCA & Diploma</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span><strong>Syllabus:</strong> Updated AICTE/UTU Curriculum 2026</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span><strong>Faculty Notices:</strong> Internal assessments, lab submissions & seminars</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-file-pen"></i>
+                <span><strong>Exam Schedules:</strong> Mid-term datesheets & UTU End-Term Admit Cards</span>
+              </li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-card-primary" onclick="openModal('academics-modal')">
+                <i class="fa-solid fa-eye"></i> View Academic Schedules
+              </button>
+              <button class="btn-card-outline" onclick="showToast('📥 Downloading Academic Calendar 2026 (PDF)...')">
+                <i class="fa-solid fa-download"></i> Calendar
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Hostel -->
+          <div class="service-card" id="hostel" data-category="hostel">
+            <div class="card-header">
+              <div class="card-icon-box icon-hostel">
+                <i class="fa-solid fa-hotel"></i>
+              </div>
+              <span class="card-badge">Campus Living</span>
+            </div>
+            <h3 class="card-title">Hostel & Residential Life</h3>
+            <p class="card-desc">
+              Comfortable, high-speed Wi-Fi enabled residential campuses with 24/7 security, nutritious multi-cuisine dining, and active wardens.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="fa-solid fa-utensils"></i>
+                <span><strong>Mess Menu:</strong> Full 7-day breakfast, lunch, high tea & dinner menu</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-door-open"></i>
+                <span><strong>Room Allocation:</strong> Single, double & AC occupancy allotment rules</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-address-book"></i>
+                <span><strong>Warden Contacts:</strong> Chief Warden, Boys & Girls Hostel direct helplines</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                <span><strong>Hostel Fees:</strong> Installment breakdown, security deposit & mess dues</span>
+              </li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-card-primary" onclick="openModal('mess-modal')">
+                <i class="fa-solid fa-utensils"></i> View Weekly Mess Menu
+              </button>
+              <button class="btn-card-outline" onclick="openModal('hostel-modal')">
+                <i class="fa-solid fa-id-badge"></i> Wardens & Rules
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Library -->
+          <div class="service-card" id="library" data-category="library">
+            <div class="card-header">
+              <div class="card-icon-box icon-library">
+                <i class="fa-solid fa-book-open-reader"></i>
+              </div>
+              <span class="card-badge">Knowledge Center</span>
+            </div>
+            <h3 class="card-title">Central Library & E-Resources</h3>
+            <p class="card-desc">
+              A vast repository of 50,000+ print volumes, international journals, digital IEEE & DELNET subscriptions, and quiet air-conditioned study rooms.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span><strong>Book Availability:</strong> Search OPAC database across authors, titles & ISBN</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-barcode"></i>
+                <span><strong>Issue & Return Portal:</strong> Check borrowing limits, renewal dates & fines</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span><strong>Digital Resources:</strong> IEEE Xplore, DELNET, Springer Nature, Swayam NPTEL</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-clock"></i>
+                <span><strong>Reading Hours:</strong> 8:30 AM to 10:00 PM (Extended during examinations)</span>
+              </li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-card-primary" onclick="openModal('library-modal')">
+                <i class="fa-solid fa-book"></i> Search Library OPAC
+              </button>
+              <button class="btn-card-outline" onclick="showToast('🔗 Connecting to IEEE / DELNET E-Resource Gateway...')">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> E-Access
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Placements -->
+          <div class="service-card" id="placements" data-category="placements">
+            <div class="card-header">
+              <div class="card-icon-box icon-placements">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <span class="card-badge">Corporate Relations</span>
+            </div>
+            <h3 class="card-title">Placements & Career Cell</h3>
+            <p class="card-desc">
+              Bridging academia and corporate industries. Ranked among the best for high-ROI packages, training bootcamps, and on-campus recruitment drives.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="fa-solid fa-trophy"></i>
+                <span><strong>Previous Stats:</strong> ₹56 LPA Top Package, ₹7.5 LPA Avg, 350+ Recruiters</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-building"></i>
+                <span><strong>Upcoming Visits:</strong> Microsoft, TCS Ninja/Digital, Wipro, Infosys, Capgemini</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <span><strong>Interview Prep Kit:</strong> DSA sheets, Aptitude tests & Mock interview sessions</span>
+              </li>
+              <li class="feature-item">
+                <i class="fa-solid fa-award"></i>
+                <span><strong>Certifications:</strong> AWS Academy, Cisco Networking & Salesforce programs</span>
+              </li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-card-primary" onclick="openModal('placements-modal')">
+                <i class="fa-solid fa-chart-pie"></i> Placement Highlights
+              </button>
+              <button class="btn-card-outline" onclick="showToast('📄 Placement Brochure 2025-26 download started...')">
+                <i class="fa-solid fa-download"></i> Brochure
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LEADERSHIP & ADMINISTRATION SECTION
+         ========================================================================== -->
+    <section class="leadership-section" id="leadership">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-users-gear"></i> Institutional Governance</span>
+          <h2 class="section-title">Leadership & Administration</h2>
+          <p class="section-subtitle">
+            Meet the visionary educators, administrators, and mentors shaping Roorkee Institute of Technology into one of North India's premier engineering and management institutes.
+          </p>
+        </div>
+
+        <!-- Upper Leadership Grid (Chairman, Director General, Director) -->
+        <div class="leadership-grid">
+
+          <!-- 1. CA S.K. Gupta (Chairman) -->
+          <article class="leader-card">
+            <div class="leader-image-wrapper">
+              <img 
+                src="https://ritroorkee.com/wp-content/uploads/2024/02/chairman-img.jpg.webp" 
+                alt="CA S.K. Gupta - Chairman, RIT Roorkee"
+                class="leader-img"
+                loading="lazy"
+                onerror="handleImgError(this, 'CA S.K. Gupta')"
+              >
+              <span class="leader-role-tag"><i class="fa-solid fa-crown"></i> Apex Leadership</span>
+            </div>
+            <div class="leader-content">
+              <h3 class="leader-name">CA S.K. Gupta</h3>
+              <div class="leader-designation">Chairman, RIT Roorkee</div>
+              <p class="leader-bio">
+                A distinguished chartered accountant, educationist, and visionary leader whose relentless dedication has propelled RIT to NAAC A++ accreditation and top ranking in Uttarakhand.
+              </p>
+              <div class="leader-footer">
+                <span><i class="fa-solid fa-building-columns"></i> Office of the Chairman</span>
+                <div class="leader-socials">
+                  <a href="mailto:chairman@ritroorkee.com" class="social-icon-btn" title="Email Chairman"><i class="fa-solid fa-envelope"></i></a>
+                  <a href="https://ritroorkee.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="View Profile"><i class="fa-solid fa-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Prof. Madhav Ji Nigam (Director General) -->
+          <article class="leader-card">
+            <div class="leader-image-wrapper">
+              <img 
+                src="https://i1.rgstatic.net/ii/profile.image/515872558194688-1500005010104_Q512/Madhav-Ji-Nigam.jpg" 
+                alt="Prof. Madhav Ji Nigam - Director General, RIT Roorkee"
+                class="leader-img"
+                loading="lazy"
+                onerror="handleImgError(this, 'Prof. Madhav Ji Nigam')"
+              >
+              <span class="leader-role-tag"><i class="fa-solid fa-microchip"></i> Academic Luminary</span>
+            </div>
+            <div class="leader-content">
+              <h3 class="leader-name">Prof. Madhav Ji Nigam</h3>
+              <div class="leader-designation">Director General</div>
+              <p class="leader-bio">
+                Eminent scholar and former Dean & Professor at IIT Roorkee. Championing high-impact research, innovation patents, faculty enrichment, and global academic pedagogy at RIT.
+              </p>
+              <div class="leader-footer">
+                <span><i class="fa-solid fa-award"></i> Former IIT Roorkee Dean</span>
+                <div class="leader-socials">
+                  <a href="mailto:dg@ritroorkee.com" class="social-icon-btn" title="Email Director General"><i class="fa-solid fa-envelope"></i></a>
+                  <a href="https://www.researchgate.net/profile/Madhav-Ji-Nigam" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="ResearchGate Profile"><i class="fa-solid fa-graduation-cap"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Prof. (Dr.) Parag Jain (Director) -->
+          <article class="leader-card">
+            <div class="leader-image-wrapper">
+              <img 
+                src="https://ritroorkee.com/wp-content/uploads/2024/03/director-495x515-1.jpg.webp" 
+                alt="Prof. (Dr.) Parag Jain - Director, RIT Roorkee"
+                class="leader-img"
+                loading="lazy"
+                onerror="handleImgError(this, 'Prof. Dr. Parag Jain')"
+              >
+              <span class="leader-role-tag"><i class="fa-solid fa-compass"></i> Institutional Director</span>
+            </div>
+            <div class="leader-content">
+              <h3 class="leader-name">Prof. (Dr.) Parag Jain</h3>
+              <div class="leader-designation">Director, RIT Roorkee</div>
+              <p class="leader-bio">
+                Seasoned administrator, researcher, and educational strategist committed to student-centric experiential learning, industry partnerships, and campus incubator development.
+              </p>
+              <div class="leader-footer">
+                <span><i class="fa-solid fa-user-gear"></i> Director's Secretariat</span>
+                <div class="leader-socials">
+                  <a href="mailto:director@ritroorkee.com" class="social-icon-btn" title="Email Director"><i class="fa-solid fa-envelope"></i></a>
+                  <a href="https://ritroorkee.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="View Profile"><i class="fa-solid fa-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Lower Leadership Grid (Dean Academics & Registrar) -->
+        <div class="leadership-grid-lower">
+
+          <!-- 4. Mr. Gaurav Chaturvedi (Dean Academics) -->
+          <article class="leader-card">
+            <div class="leader-image-wrapper">
+              <div class="avatar-placeholder">
+                <i class="fa-solid fa-user-graduate"></i>
+                <div class="avatar-initials">GC • Dean Academics</div>
+              </div>
+              <span class="leader-role-tag"><i class="fa-solid fa-book-open"></i> Academic Affairs</span>
+            </div>
+            <div class="leader-content">
+              <h3 class="leader-name">Mr. Gaurav Chaturvedi</h3>
+              <div class="leader-designation">Dean Academics</div>
+              <p class="leader-bio">
+                Supervises course curriculum execution, accreditation compliance, continuous assessment protocols, and faculty mentoring across all engineering and management branches.
+              </p>
+              <div class="leader-footer">
+                <span><i class="fa-solid fa-chalkboard-user"></i> Dean's Office</span>
+                <div class="leader-socials">
+                  <a href="mailto:dean.academics@ritroorkee.com" class="social-icon-btn" title="Email Dean Academics"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Mr. Munendra Singh Chauhan (Registrar) -->
+          <article class="leader-card">
+            <div class="leader-image-wrapper">
+              <div class="avatar-placeholder">
+                <i class="fa-solid fa-user-tie"></i>
+                <div class="avatar-initials">MSC • Registrar</div>
+              </div>
+              <span class="leader-role-tag"><i class="fa-solid fa-shield-halved"></i> Statutory & Administration</span>
+            </div>
+            <div class="leader-content">
+              <h3 class="leader-name">Mr. Munendra Singh Chauhan</h3>
+              <div class="leader-designation">Registrar</div>
+              <p class="leader-bio">
+                Directs official university records, admissions governance, campus operations, statutory affiliations, student welfare policies, and institutional discipline.
+              </p>
+              <div class="leader-footer">
+                <span><i class="fa-solid fa-stamp"></i> Registrar's Office</span>
+                <div class="leader-socials">
+                  <a href="mailto:registrar@ritroorkee.com" class="social-icon-btn" title="Email Registrar"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STUDENT HELPDESK & TICKET QUERY SECTION
+         ========================================================================== -->
+    <section class="helpdesk-section" id="helpdesk">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-headset"></i> Student Redressal</span>
+          <h2 class="section-title">Submit a Query or Grievance</h2>
+          <p class="section-subtitle">
+            Need urgent assistance with fees, hostel facilities, examination discrepancies, or certificates? Submit your request below for prompt resolution within 24 hours.
+          </p>
+        </div>
+
+        <div class="helpdesk-card-wrapper">
+          <!-- Left Info Pane -->
+          <div class="helpdesk-info-pane">
+            <div>
+              <h3 class="info-pane-title">24x7 Student Support Central</h3>
+              <p class="info-pane-text">
+                Every ticket generated is assigned a unique tracking ID and routed directly to the concerned departmental dean, warden, or finance officer.
+              </p>
+
+              <div class="helpline-list">
+                <div class="helpline-item">
+                  <div class="helpline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                  <div>
+                    <div class="helpline-label">General Helpdesk Hotline</div>
+                    <div class="helpline-val"><a href="tel:+919927099224">+91-99270 99224</a></div>
+                  </div>
+                </div>
+
+                <div class="helpline-item">
+                  <div class="helpline-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
+                  <div>
+                    <div class="helpline-label">Hostel & Medical Emergency</div>
+                    <div class="helpline-val"><a href="tel:+919927099228">+91-99270 99228</a></div>
+                  </div>
+                </div>
+
+                <div class="helpline-item">
+                  <div class="helpline-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                  <div>
+                    <div class="helpline-label">Official Grievance Email</div>
+                    <div class="helpline-val"><a href="mailto:helpdesk@ritroorkee.com">helpdesk@ritroorkee.com</a></div>
+                  </div>
+                </div>
+
+                <div class="helpline-item">
+                  <div class="helpline-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                  <div>
+                    <div class="helpline-label">Standard Resolution Time</div>
+                    <div class="helpline-val">Within 12 - 24 Working Hours</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.8rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; margin-top: 2rem;">
+              <i class="fa-solid fa-shield-cat"></i> Anti-Ragging Cell & Internal Complaints Committee (ICC) Toll-Free: <strong>1800-180-5522</strong>
+            </div>
+          </div>
+
+          <!-- Right Form Pane -->
+          <div class="helpdesk-form-pane">
+            <h3 class="form-pane-title">Raise a Helpdesk Ticket</h3>
+            <p class="form-pane-sub">Please fill in your authentic student credentials to help us track your records.</p>
+
+            <form id="ticketForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="studentName" class="form-label">Full Name *</label>
+                  <input type="text" id="studentName" class="form-control" placeholder="e.g. Aman Sharma" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="studentRoll" class="form-label">University Roll / Student ID *</label>
+                  <input type="text" id="studentRoll" class="form-control" placeholder="e.g. 210068010045" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="studentEmail" class="form-label">College Email or Personal Email *</label>
+                  <input type="email" id="studentEmail" class="form-control" placeholder="e.g. aman.cse@ritroorkee.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="studentDept" class="form-label">Department / Branch *</label>
+                  <select id="studentDept" class="form-control" required>
+                    <option value="">Select Department</option>
+                    <option value="Computer Science & Engineering">CSE (Core & AI/ML)</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Management Studies">MBA / BBA</option>
+                    <option value="Computer Applications">MCA / BCA</option>
+                    <option value="Agriculture & Forestry">B.Sc Agriculture / Forestry</option>
+                  </select>
+                </div>
+
+                <div class="form-group-full form-group">
+                  <label for="ticketCategory" class="form-label">Category of Query *</label>
+                  <select id="ticketCategory" class="form-control" required>
+                    <option value="">Choose issue category</option>
+                    <option value="Academics & Exam Datesheet">Academics, Syllabus & Exam Datesheet</option>
+                    <option value="Hostel & Mess Amenities">Hostel Room, Maintenance & Mess Food</option>
+                    <option value="Accounts & Fee Verification">Accounts, Fee Receipts & No Dues</option>
+                    <option value="Placements & Training Drives">Training & Placement Cell</option>
+                    <option value="Library Book Renewal / OPAC">Library OPAC & E-Journals</option>
+                    <option value="Campus Wi-Fi & ERP Login">Campus Wi-Fi, ERP & Email Credentials</option>
+                    <option value="Bonafide & Character Certificate">Bonafide / Character Certificate Request</option>
+                  </select>
+                </div>
+
+                <div class="form-group-full form-group">
+                  <label for="ticketSubject" class="form-label">Subject / Brief Description *</label>
+                  <input type="text" id="ticketSubject" class="form-control" placeholder="e.g. Request for 5th Semester Re-evaluation / Hostel Wi-Fi issue" required>
+                </div>
+
+                <div class="form-group-full form-group">
+                  <label for="ticketMessage" class="form-label">Detailed Message *</label>
+                  <textarea id="ticketMessage" class="form-control" rows="4" placeholder="Describe your query in detail including semester, room number (if hostel), or fee transaction ID..." required></textarea>
+                </div>
+
+                <div class="form-group-full">
+                  <button type="submit" class="btn-submit-ticket">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Generate & Submit Ticket</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQS ACCORDION SECTION
+         ========================================================================== -->
+    <section class="faq-section" id="faqs">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Instant Answers</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Find quick resolutions to common queries regarding fee deposits, hostel check-ins, library borrowing limits, and placement drive eligibility.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I pay my semester or hostel fee online?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Students can deposit tuition and hostel fees securely through the RIT ERP Student Portal via Net Banking, UPI, or Credit/Debit Card. Alternatively, demand drafts in favor of <em>"Roorkee Institute of Technology"</em> payable at Roorkee can be submitted at the accounts branch (Admin Block - Ground Floor).
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What are the campus entry and hostel curfew timings?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              For security, students must report back to campus by 7:30 PM (Winter) and 8:00 PM (Summer). Hostel biometric attendance is recorded daily at 8:30 PM. Any outstation leave requires a digital or written gate-pass approved by the respective hostel warden and parent confirmation.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How can I register for on-campus placement drives?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Eligible students (minimum 60% aggregate without active backlogs for tier-1 companies) are enrolled via the Training & Placement Cell portal. Drive announcements, syllabus, and test links are dispatched to student registered emails and published on the T&P Notice Board.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How many books can I issue simultaneously from the Central Library?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Undergraduate students can issue up to 4 books for 14 days, and Postgraduate/M.Tech scholars can issue up to 6 books. Renewals can be completed twice online via OPAC if the title is not on hold for another member.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Who should I contact if my campus Wi-Fi or ERP password stops working?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              You can submit a ticket above under the "Campus Wi-Fi & ERP Login" category or visit the IT Infrastructure Helpdesk (Computer Center, 2nd Floor, Academic Block B) along with your college identity card.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Institute Info & Brand -->
+        <div>
+          <div class="footer-brand-title">Roorkee Institute of Technology</div>
+          <p class="footer-desc">
+            Approved by AICTE, Ministry of Education, Govt. of India, and affiliated to Veer Madho Singh Bhandari Uttarakhand Technical University (UTU), Dehradun. NAAC A++ Accredited.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/ritroorkee/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ritroorkeeofficial/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/school/roorkee-institute-of-technology/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@ritroorkeeofficial" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Portals</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="https://ritroorkee.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chevron-right"></i> Official RIT Website</a></li>
+            <li class="footer-link-item"><a href="#academics"><i class="fa-solid fa-chevron-right"></i> Academic Schedules</a></li>
+            <li class="footer-link-item"><a href="#hostel"><i class="fa-solid fa-chevron-right"></i> Hostel & Mess Menu</a></li>
+            <li class="footer-link-item"><a href="#placements"><i class="fa-solid fa-chevron-right"></i> Placement Statistics</a></li>
+            <li class="footer-link-item"><a href="#library"><i class="fa-solid fa-chevron-right"></i> Library OPAC System</a></li>
+            <li class="footer-link-item"><a href="#leadership"><i class="fa-solid fa-chevron-right"></i> College Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Student Services -->
+        <div>
+          <h4 class="footer-col-title">Student Services</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#helpdesk"><i class="fa-solid fa-chevron-right"></i> Raise Helpdesk Ticket</a></li>
+            <li class="footer-link-item"><a href="#faqs"><i class="fa-solid fa-chevron-right"></i> Knowledgebase & FAQs</a></li>
+            <li class="footer-link-item"><a href="mailto:anti-ragging@ritroorkee.com"><i class="fa-solid fa-chevron-right"></i> Anti-Ragging Cell</a></li>
+            <li class="footer-link-item"><a href="mailto:tpo@ritroorkee.com"><i class="fa-solid fa-chevron-right"></i> Corporate Relations Cell</a></li>
+            <li class="footer-link-item"><a href="mailto:accounts@ritroorkee.com"><i class="fa-solid fa-chevron-right"></i> Accounts & Fee Verification</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Campus Map & Contact -->
+        <div>
+          <h4 class="footer-col-title">RIT Roorkee Campus</h4>
+          <p class="contact-address">
+            <strong>Roorkee Institute of Technology</strong><br>
+            8th Km Stone, Dehradun Road, Puhana,<br>
+            Roorkee, Haridwar, Uttarakhand – 247667<br>
+            Phone: +91-99270 99224 / 99228
+          </p>
+
+          <!-- Google Maps Embed for RIT Roorkee -->
+          <div class="campus-map-box">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.0543669046645!2d77.85420367623103!3d29.862704027878893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3e9db23c4a1%3A0xe54e195745d6f3b0!2sRoorkee%20Institute%20of%20Technology%20(RIT)!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="160" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Roorkee Institute of Technology Google Maps Location"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 Roorkee Institute of Technology (RIT). All Rights Reserved. NAAC A++ Accredited.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#helpdesk">Student Helpdesk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ==========================================================================
+       INTERACTIVE MODAL WINDOWS
+       ========================================================================== -->
+
+  <!-- Modal 1: Academics Details -->
+  <div class="modal-overlay" id="academics-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-graduation-cap" style="color: var(--primary-blue);"></i> Academics & Curriculum Hub</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          Download syllabus frameworks, class timetables, and UTU datesheets for current academic sessions.
+        </p>
+
+        <h4 style="font-size: 1.05rem; color: var(--primary-navy); margin-bottom: 0.75rem;">Timetables by Department</h4>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
+          <button class="btn-card-outline" style="text-align: left; justify-content: flex-start;" onclick="showToast('📄 B.Tech CSE (Sem III, V, VII) Timetable downloading...')">
+            <i class="fa-solid fa-file-pdf" style="color: var(--brand-red);"></i> B.Tech CSE / AI & ML
+          </button>
+          <button class="btn-card-outline" style="text-align: left; justify-content: flex-start;" onclick="showToast('📄 B.Tech ME / CE / EE Timetable downloading...')">
+            <i class="fa-solid fa-file-pdf" style="color: var(--brand-red);"></i> B.Tech Core Branches
+          </button>
+          <button class="btn-card-outline" style="text-align: left; justify-content: flex-start;" onclick="showToast('📄 MBA & MCA Timetable downloading...')">
+            <i class="fa-solid fa-file-pdf" style="color: var(--brand-red);"></i> MBA & MCA Programs
+          </button>
+          <button class="btn-card-outline" style="text-align: left; justify-content: flex-start;" onclick="showToast('📄 B.Sc Agriculture & Forestry Timetable downloading...')">
+            <i class="fa-solid fa-file-pdf" style="color: var(--brand-red);"></i> B.Sc Agriculture & Allied
+          </button>
+        </div>
+
+        <h4 style="font-size: 1.05rem; color: var(--primary-navy); margin-bottom: 0.75rem;">Upcoming Academic Milestones</h4>
+        <div style="background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); font-size: 0.9rem;">
+          <div style="display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid var(--border-color);">
+            <span>Mid-Semester Assessment II</span>
+            <strong>Nov 10 – Nov 17, 2026</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid var(--border-color);">
+            <span>Practical & Lab Viva Examinations</span>
+            <strong>Dec 01 – Dec 08, 2026</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 0.4rem 0;">
+            <span>UTU End-Term Theory Examinations</span>
+            <strong>Dec 15 – Jan 05, 2027</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Weekly Mess Menu -->
+  <div class="modal-overlay" id="mess-modal">
+    <div class="modal-card" style="max-width: 780px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-utensils" style="color: var(--brand-red);"></i> Weekly Hostel Mess Menu</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+          Hygiene-certified dining serving balanced, nutritious vegetarian and non-vegetarian selections. Select a day to view meal timings and items:
+        </p>
+
+        <!-- Day Selector Tabs -->
+        <div class="mess-day-tabs">
+          <button class="day-tab active" data-day="mon">Monday</button>
+          <button class="day-tab" data-day="tue">Tuesday</button>
+          <button class="day-tab" data-day="wed">Wednesday</button>
+          <button class="day-tab" data-day="thu">Thursday</button>
+          <button class="day-tab" data-day="fri">Friday</button>
+          <button class="day-tab" data-day="sat">Saturday</button>
+          <button class="day-tab" data-day="sun">Sunday</button>
+        </div>
+
+        <!-- Meal Display Grid -->
+        <div class="mess-meals-grid">
+          <div class="meal-box">
+            <div class="meal-type"><i class="fa-solid fa-mug-saucer"></i> Breakfast (7:30 - 9:00 AM)</div>
+            <div class="meal-items" id="messBreakfast">Aloo Paratha, Curd, Pickle, Tea / Coffee, Boiled Eggs / Banana</div>
+          </div>
+          <div class="meal-box">
+            <div class="meal-type"><i class="fa-solid fa-bowl-rice"></i> Lunch (12:30 - 2:00 PM)</div>
+            <div class="meal-items" id="messLunch">Dal Makhani, Seasonal Veg, Steamed Rice, Phulka, Salad, Raita</div>
+          </div>
+          <div class="meal-box">
+            <div class="meal-type"><i class="fa-solid fa-cookie"></i> Evening Snacks (5:00 - 6:00 PM)</div>
+            <div class="meal-items" id="messSnacks">Samosa / Poha, Mint Chutney, Hot Masala Tea</div>
+          </div>
+          <div class="meal-box">
+            <div class="meal-type"><i class="fa-solid fa-plate-wheat"></i> Dinner (7:45 - 9:30 PM)</div>
+            <div class="meal-items" id="messDinner">Shahi Paneer / Egg Curry, Jeera Rice, Tawa Roti, Gulab Jamun</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding: 0.85rem; background: #fffbeb; border-radius: var(--radius-md); border: 1px solid #fef3c7; font-size: 0.84rem; color: #92400e;">
+          <i class="fa-solid fa-circle-info"></i> Special festive feast organized on the first Sunday of every month. Jain food preparations available on prior request to the Mess Incharge.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Hostel Wardens & Allocation Details -->
+  <div class="modal-overlay" id="hostel-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-building-user" style="color: var(--primary-blue);"></i> Hostel Wardens & Contacts</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          Direct contact information for residential wardens and hostel administration.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="color: var(--primary-navy); font-size: 1rem;">Chief Warden Office</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Overall Campus Residential Administration</div>
+            </div>
+            <a href="tel:+919927099228" class="btn-card-primary" style="flex: none; padding: 0.45rem 0.85rem;">
+              <i class="fa-solid fa-phone"></i> Call
+            </a>
+          </div>
+
+          <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="color: var(--primary-navy); font-size: 1rem;">Boys Hostel (Ganga & Yamuna Bhawan)</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Warden: Mr. R.K. Sharma • Ext. 204</div>
+            </div>
+            <a href="tel:+919927099224" class="btn-card-primary" style="flex: none; padding: 0.45rem 0.85rem;">
+              <i class="fa-solid fa-phone"></i> Call
+            </a>
+          </div>
+
+          <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="color: var(--primary-navy); font-size: 1rem;">Girls Hostel (Saraswati Bhawan)</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Warden: Mrs. Sunita Rawat • Ext. 209</div>
+            </div>
+            <a href="tel:+919927099225" class="btn-card-primary" style="flex: none; padding: 0.45rem 0.85rem;">
+              <i class="fa-solid fa-phone"></i> Call
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <button class="btn-submit-ticket" style="width: auto; padding: 0.65rem 1.5rem;" onclick="closeAllModals(); scrollToSection('helpdesk');">
+            <i class="fa-solid fa-wrench"></i> Submit Hostel Maintenance Request
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Library OPAC & Resources -->
+  <div class="modal-overlay" id="library-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-book-bookmark" style="color: var(--primary-blue);"></i> Central Library Portal & OPAC</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; display: block;">Search OPAC Book Catalog</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="text" class="form-control" placeholder="Search by Book Title, Author (e.g. Tanenbaum, Galvin, Kothari)..." id="librarySearchInput">
+            <button class="btn-card-primary" style="flex: none;" onclick="showToast('🔍 Searching 50,000+ RIT Library Catalog records...')">Search</button>
+          </div>
+        </div>
+
+        <h4 style="font-size: 1rem; color: var(--primary-navy); margin-bottom: 0.75rem;">Subscribed Digital E-Resource Gateways</h4>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+          <a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener noreferrer" class="feature-item" style="justify-content: space-between;">
+            <span><i class="fa-solid fa-globe"></i> IEEE Xplore Digital Library</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+          <a href="https://delnet.in" target="_blank" rel="noopener noreferrer" class="feature-item" style="justify-content: space-between;">
+            <span><i class="fa-solid fa-network-wired"></i> DELNET Inter-Library</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+          <a href="https://link.springer.com" target="_blank" rel="noopener noreferrer" class="feature-item" style="justify-content: space-between;">
+            <span><i class="fa-solid fa-book"></i> Springer Nature Journals</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+          <a href="https://nptel.ac.in" target="_blank" rel="noopener noreferrer" class="feature-item" style="justify-content: space-between;">
+            <span><i class="fa-solid fa-video"></i> NPTEL / Swayam Lectures</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Placements & Stats -->
+  <div class="modal-overlay" id="placements-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-chart-pie" style="color: var(--brand-red);"></i> Placements 2025-26 Snapshot</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; text-align: center;">
+          <div style="background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--brand-red);">₹56 LPA</div>
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Highest International CTC</div>
+          </div>
+          <div style="background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary-navy);">₹7.5 LPA</div>
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Average Package</div>
+          </div>
+          <div style="background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 1.6rem; font-weight: 800; color: #16a34a;">350+</div>
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Visiting Companies</div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 1.05rem; color: var(--primary-navy); margin-bottom: 0.75rem;">Major Campus Recruiters</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+          Microsoft, Amazon, TCS, Infosys, Wipro, Capgemini, Cognizant, Tech Mahindra, Byju's, HCL, Reliance Jio, Daffodil Software, and Decathlon.
+        </p>
+
+        <button class="btn-submit-ticket" style="width: 100%;" onclick="showToast('📥 Downloading Placement Preparation Guide & Aptitude Kit...')">
+          <i class="fa-solid fa-file-arrow-down"></i> Download Placement Training Guide (PDF)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Ticket Submission Success Dialog -->
+  <div class="modal-overlay" id="ticket-success-modal">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Ticket Submitted!</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body ticket-success-box">
+        <div class="success-check-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h4 style="font-size: 1.3rem; color: var(--primary-navy); margin-bottom: 0.4rem;">Your Request has been Logged</h4>
+        <p style="font-size: 0.92rem; color: var(--text-muted);">
+          Your query has been securely transmitted to the RIT Roorkee Helpdesk Administration. Please note your official tracking ticket ID:
+        </p>
+
+        <div class="ticket-id-badge" id="modalTicketId">RIT-HD-2026-0000</div>
+
+        <div style="background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); text-align: left; font-size: 0.88rem; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+          <div style="margin-bottom: 0.35rem;"><strong>Student:</strong> <span id="modalStudentDetails">Student Name</span></div>
+          <div><strong>Category:</strong> <span id="modalTicketCategory">Category Details</span></div>
+        </div>
+
+        <button class="btn-card-primary modal-dismiss" style="width: 100%;">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
